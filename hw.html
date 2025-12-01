@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hw</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #889be1;
+        }
+        #background{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            margin: 20px;
+            
+        }
+        .a p{
+            font-size: 28px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .b{
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .b input{
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        button{
+            padding: 10px 20px;
+            border: none;
+            background: #444;
+            color: rgb(218, 229, 255);
+            border-radius: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <div class="a">
+            <p id="text">What is the answer?</p>
+        </div>
+        <div class="b">
+            <input type="text" id="1">
+            <input type="text" id="2">
+            <input type="text" id="3">
+            <input type="text" id="4">
+            <button onclick="shalga()">Check</button>
+        </div>
+    </div>
+
+    <script>
+        let n = 0;
+        const a = 1, b = 6, c = 7, d = 1;
+
+        function shalga(){
+            let A = document.getElementById("1");
+            let B = document.getElementById("2");
+            let C = document.getElementById("3");
+            let D = document.getElementById("4");
+            let background = document.getElementById('background');
+
+            if( a != Number(A.value) ) n = 1;
+            if( b != Number(B.value) ) n = 1;
+            if( c != Number(C.value) ) n = 1;
+            if( d != Number(D.value) ) n = 1;
+
+            if (n == 1){
+                A.value = '';
+                B.value = '';
+                C.value = '';
+                D.value = '';
+                alert("The numbers are incorrect");
+                document.getElementById('text').innerText = 'Wrong!';
+                n = 0;
+            }else{
+                A.value = '';
+                B.value = '';
+                C.value = '';
+                D.value = '';
+                alert("The numbers are correct");
+                document.getElementById('text').innerText = 'Correct!';
+                n = 0;
+            }
+        }
+    </script>
+</body>
+</html>
